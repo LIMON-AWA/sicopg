@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        <title>Catalogo de productos</title>
+    </h:head>
+
+    <h:body style="background: #0dcaf0">
+  <h:outputStylesheet name="primeflex/primeflex.css" />
+   <div class="card">
+    <h:form>
+        <p:dataTable value="#{catalogo_ProductosBean.findAll()}" var="p" >
+         
+            <f:facet name="header" >
+                <div style="font-size: 30px; text-align: center">
+                            Catalogo de productos
+                </div> 
+                            </f:facet>
+       
+            <p:column headerText="Codigo">
+                <h:outputText value="#{p.id_Catalogo}"/> 
+            </p:column>
+            <p:column headerText="Nombre">
+                <h:outputText value="#{p.producto}"/> 
+            </p:column>
+            <p:column headerText="Precio">
+                <h:outputText value="#{p.precioUnitario}">
+               <f:convertNumber currencySymbol="$" type="currency"/>
+                </h:outputText> 
+            </p:column>
+            <p:column >
+                 <p:commandButton value="Agregar al carrito" icon="pi pi-shopping-cart" update="@form"
+                                              actionListener="#{catalogo_ProductosBean.actionListenerAgregarProducto(p)}" >
+                                     
+                        </p:commandButton>
+            </p:column> 
+           
+           
+          
+        </p:dataTable>
+        <p:dataTable value="#{catalogo_ProductosBean.carrito}" var="p">
+            <p:column headerText="Codigo">
+                <h:outputText value="#{p.id_Catalogo}"/> 
+            </p:column>
+            <p:column headerText="Nombre">
+                <h:outputText value="#{p.producto}"/> 
+            </p:column>
+            <p:column headerText="Precio">
+                <h:outputText value="#{p.precioUnitario}"/> 
+                <f:facet name="footer">
+                    <h:outputText value="Suma: #{catalogo_ProductosBean.totalcarrito}"/> 
+                    
+                </f:facet>
+            </p:column>
+            <p:column >
+                <p:commandButton value="Eliminar" update="@form"
+                                 actionListener="#{catalogo_ProductosBean.actionListenerEliminarProducto(p)}"/>
+            </p:column>
+            
+        </p:dataTable>
+          <h:form> 
+              <p:commandButton value="Comprar" 
+                               />
+          </h:form>
+    </h:form>
+</div>
+    </h:body>
+
+</html>

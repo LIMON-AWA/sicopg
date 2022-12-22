@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+        <title>Cambio de contraseña</title>
+    </h:head>
+    <h:body>
+        <div class="container w-50 pt-5" style="margin-top: 250px">
+            <div class="col-auto mb-2 text-center">
+               <div class="p-3 border border-2 border-warning rounded-3" style="background-color: #0b2936">
+                <h:form class="text-white px-5" id="form">
+                    <p:growl showDetail="true">
+                        <p:autoUpdate/>
+                    </p:growl>
+                    <h:graphicImage url="../resources/img/png/Logodefinitivo.png" library="primeblocks-app" alt="Image"
+                                            height="50" styleClass="mb-3"/>
+                    <div class="form-group">
+                        <h2 class="fst-italic fw-bolder">Ventana de Confirmación</h2>
+                    </div>
+                    <div class="mb-2 form-group">
+                        <h:outputLabel for="correoUsuario" class="control-label">¿Está seguro de querer cambiar su contraseña?</h:outputLabel>
+<!--                        <h:inputText id="correoUsuario" value="#{usuario.correo}" class="form-control" readonly="true"
+                                         validatorMessage="Correo es obligatorio">
+                                <f:validateRequired/>
+                            </h:inputText>-->
+                    </div>
+<!--                    <div class="mb-2 mt-3 form-group">
+                        <h:commandButton value="Aceptar" action="#{personaBean.updatePasswword(correo)}" class="btn btn-primary border border-white fw-bold"
+                             style="width: 80px;"></h:commandButton>
+                        <h:form>
+                            <h:commandButton value="Regresar" action="/index" class="btn btn-danger border border-white fw-bold"></h:commandButton>
+                        </h:form>
+                            <a href="panadero.xhtml" class="btn btn-danger border border-white fw-bold">Regresar</a>
+                    </div>-->
+                    <div class="mb-2 mt-3 form-group">
+                                <p:growl id="message" showDetail="true"/>
+
+                                <p:commandButton action="#{personaBean.updatePasswword(correo)}" value="Aceptar" update="message" class="btn btn-primary border border-white fw-bold">
+                                    <p:confirm header="Confirmación" message="Estás seguro de continuar?" icon="pi pi-info-circle"/>
+                                </p:commandButton>
+
+                                <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width="350" style="margin-top: 30px">
+                                    <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no ui-button-flat"/>
+                                    <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" />
+                                </p:confirmDialog>                            
+                    </div>
+                </h:form>
+               
+               </div>
+               </div>
+       </div>
+    </h:body>
+</html>

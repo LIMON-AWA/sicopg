@@ -1,0 +1,180 @@
+*{
+    box-sizing: border-box;
+    margin: 0 ; /*Margen para los 4 lados*/
+    padding: 0 ; /*Espacio entre contenido*/
+    font-family: 'Montserrat', sans-serif;
+}
+/* Imagenes de nav y footer */
+.options img{
+    width: 50px;
+    height: 50px;
+}
+h1{
+    display: block;
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.redes img{
+    width: 50px;
+    height: 50px;
+}
+
+.promociones img{
+    width: 150px;
+    height: 150px;
+}
+
+html{
+    height: 100%;
+}
+
+
+/* Body */
+body{
+    min-height: 100%;
+}
+
+.container > * {
+    box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.75);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+
+.container{
+    display: grid;
+    gap: 10px;
+    /* Le damos el orden */
+    grid-template-areas:
+        "header"
+        "navbar"
+        "section"
+        "footer";
+}
+
+.header{
+    grid-area: header;
+}
+
+.navbar{
+    grid-area: navbar;
+}
+
+.section{
+    grid-area: section;
+}
+
+.footer{
+    grid-area: footer;
+}
+
+
+@media (min-width: 900px) {
+    .container{
+        grid-template:
+            "header  header  header" 100px
+            "navbar  section  section" auto
+            "footer  footer  footer" 100px /
+            200px auto;
+    }
+}
+
+article h2{
+    font-size: 40px;
+}
+/* Nav */
+.navbar{
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+}
+/* Article */
+.section{
+    align-items: center;
+    justify-content:  center;
+    text-align: center;
+}
+.promociones{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+}
+
+.footer{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.footer div{
+    width: 50%;
+    justify-items: center;
+    text-align: center;
+}
+
+.creditos{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.creditos_inte{
+    display: grid;
+    column-gap: 2,1;
+}
+
+/*---------------Ventana-------------------- */
+.overlay{
+    background: rgba(0,0,0,.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.overlay .active{
+    visibility: visible;
+}
+
+.ventana{
+    background-color: #f8f8f8;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,.3);
+    border-radius: 20px;
+    padding: 80px;
+    text-align: center;
+    opacity: 0;
+    transition: .2s ease all;
+    transform: scale(0.7);
+}
+
+.ventana .cerrar{
+    font-size: 40px;
+    line-height: 40px;
+    display: block;
+    text-align: left;
+    color: #BBBBBB;
+    transition: .3s ease all;
+}
+
+.ventana .cerrar:hover{
+    color: #000;
+}
+/*---------------Animaciones Pop-Up-------------------- */
+.ventana.active{
+    opacity: 1;
+    transform: scale(1);
+}
+/* -----------Casillas de ingreso------------*/
+.ingreso{
+    padding: 10px;
+    display: grid;
+    grid-row: 2,1fr;
+}

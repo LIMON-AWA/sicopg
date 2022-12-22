@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+        <h:head>
+        <title>Envio de correos</title>
+        <h:outputStylesheet library="css" name="styleAdmin.css"/>
+        <link rel="stylesheet" href="../resources/css/styleAdmin.css"/>
+        <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../resources/css/styleIcons.css"/>
+        <script src="https://kit.fontawesome.com/e04771906c.js" crossorigin="anonymous"></script>
+    </h:head>
+    <body>
+        <div>
+                <h:form>
+                    <p:growl id="messages" showDetail="true"/>
+                    <p:panel header="ENVIO DE CORREOS" style="width:600px">
+                        <h:panelGrid columns="2" cellspacing="6">
+                            <h:outputLabel for="dest" value="Destino"/>
+                            <h:inputText id="txtdestino" value="#{mailBean.destino}"/>
+                            <h:outputLabel for="asunt" value="Asunto"/>
+                            <h:inputText id="txtasunto" value="#{mailBean.asunto}"/>
+                            <h:outputLabel for="cuerpo" value="Cuerpo"/>
+                            <h:inputText id="txtcuerpo" value="#{mailBean.texto}" />
+                        </h:panelGrid>   
+                        <p:commandButton icon="pi pi-send" ajax="false" type="submit" value="Enviar" action="#{mailBean.notificar()}"
+                                    styleClass="ui-button-raised ui-button-flat" />
+                        <br></br>
+                        
+                         
+          
+                    </p:panel>
+                   <p:commandButton icon="pi pi-send" ajax="false" type="submit" value="Regresar" action="/Dashboard/Administrador/Dashboard/index.xhtml"
+                                         
+                                    styleClass="ui-button-raised ui-button-flat" />
+                 
+                </h:form>
+        </div>
+
+    </body>
+</html>

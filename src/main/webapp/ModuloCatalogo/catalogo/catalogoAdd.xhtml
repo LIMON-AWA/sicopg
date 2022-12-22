@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+         <link rel="shortcut icon" href="../PaginaPrincipall/Img/logo/arbol.png" type="image/x-icon"></link>
+         
+          <link href="../../login/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+      
+        <link href="../../login/css/style.css" rel="stylesheet" type="text/css"/>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'/>
+        <title>Agregar producto</title>
+    </h:head>
+    <h:body>
+         <div class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="header-left">
+                            <div class="logo">
+                                <a href="../../pagina principal/index.jsp"><img src="../../login/images/logo.png" alt="logo del proyecto"/></a>
+                               
+                            </div>
+                            <div class="col-md-6">
+                        
+                        </div>
+                    </div>
+                            <div style="background: black" class="menu">
+                                <a class="toggleMenu" href="#"><img src="../../images/nav.png" alt="" /></a>
+                                
+                                <ul class="nav" id="nav">
+                                    <li><a href="../../pagina principal/shop.jsp">Tienda</a></li>
+                                    
+                                    <li><a href="../../pagina principal/team.jsp">SICOP</a></li>
+                                   
+                                    <li><a href="../../pagina principal/experiance.jsp">Categoria</a></li>
+                                    <li><a href="../../pagina principal/shop.jsp">Productos</a></li>
+                                    <li><a href="../../pagina principal/contact.jsp">Contactanos</a></li>	
+                                    <li><a href="../../index.xhtml">Ingresar</a></li>								
+                                    
+                                    <div class="clear"></div>
+                                </ul>
+                                <script type="text/javascript" src="js/responsive-nav.js"></script>
+                            </div>							
+                            <div class="clear"></div>
+                        </div>
+                        <div class="header_right">
+                            <!-- start search-->
+                            <div class="search-box">
+                                <div id="sb-search" class="sb-search">
+                                    
+                                </div>
+                            </div>
+                            
+                           
+                            <ul class="icon1 sub-icon1 profile_img">
+                                <li><a class="active-icon c1" href="#"> </a>
+                                    <ul class="sub-icon1 list">
+                                        <div class="product_control_buttons">
+                                            <a href="#"><img src="images/edit.png" alt=""/></a>
+                                            <a href="#"><img src="images/close_edit.png" alt=""/></a>
+                                        </div>
+                                        <div class="clear"></div>
+                                        <li class="list_img"><img src="images/1.jpg" alt=""/></li>
+                                        <li class="list_desc"><h4><a href="#">Producto Seleccionado</a></h4><span class="actual">1 x
+                                                $85.000</span></li>
+                                        <div class="login_buttons">
+                                            <div class="check_button"><a href="pagina principal/checkout.jsp">Confirmar</a></div>
+                                            <div class="login_button"><a href="login.xhtml">Ingresar</a></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         <h:form>
+               <p:messages>
+            <p:autoUpdate/>
+        </p:messages>
+
+            
+            <p:fieldset legend="Agregar producto">
+                <h:panelGrid columns="3" >
+                 
+                     
+                         
+                          <p:outputLabel for="catalogo" value="id catalogo:" />
+                    <p:inputText id="catalogo" value="#{catalogo_ProductoBean.id_Catalogo}" required="true" />
+                    <p:message for="nombre"/>
+                    
+                       <p:outputLabel for="nombre" value="Nombre Producto:" />
+                    <p:inputText id="nombre" value="#{catalogo_ProductosBean.catalogo_productos.producto}" required="true" />
+                    <p:message for="nombre"/>
+                     
+                    
+            
+                   
+                    <p:outputLabel for="precio" value="Precio Unitario:"  />
+                    <p:inputText id="precio" value="#{catalogo_ProductosBean.catalogo_productos.precioUnitario}" label="Currency" required="true">
+                
+            </p:inputText>
+                     <p:message for="precio"/>
+                     
+                    
+                  
+                </h:panelGrid>   
+                <p:commandButton action="#{catalogo_ProductosBean.save()}" value="Guardar" type="submit" ajax="false"/>
+                    <h:form>
+                        <p:commandButton action="catalogoList.xhtml?faces-redirect=true" ajax="false" type="submit"
+                                         value="Regresar"/>
+                    </h:form>
+            </p:fieldset>
+          
+             
+                   
+        </h:form>
+         <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <ul class="footer_box">
+                        <h4>Productos</h4>
+                        <li><a href="#">Promociones</a></li>
+                        <li><a href="#">Precios</a></li>
+                        <li><a href="#">Categorias</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="footer_box">
+                        <h4>Acerca de</h4>
+                        <li><a href="#">SICOP</a></li>
+                        <li><a href="#">Equipo</a></li>
+                        <li><a href="#">Solicitudes</a></li>
+                        
+
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="footer_box">
+                        <h4>Soporte</h4>
+                        <li><a href="#">Contactanos</a></li>
+                        <li><a href="#">sicop@gmail.com</a></li>
+                        <li><a href="#">3134670588</a></li>
+                        <li><a href="#">Ayuda</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="footer_box">
+                        <h4>Opiniones</h4>
+                        <div class="footer_search">
+                            
+                        </div>
+                        <ul class="social">	
+                            <li class="facebook"><a href="#"><span> </span></a></li>
+                            <li class="twitter"><a href="#"><span> </span></a></li>
+                            <li class="instagram"><a href="#"><span> </span></a></li>	
+                            <li class="pinterest"><a href="#"><span> </span></a></li>	
+                            <li class="youtube"><a href="#"><span> </span></a></li>										  				
+                        </ul>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="row footer_bottom">
+                <div class="copy">
+                    <p>© 2022 COMPANY <a href="" target="_blank">SICOP</a></p>
+                </div>
+                <dl id="sample" class="dropdown">
+                    <dt><a href="#"><span>Cambiar Región</span></a></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="#">Australia<img class="flag" src="images/as.png" alt="" /><span class="value">AS</span></a></li>
+                            <li><a href="#">Sri Lanka<img class="flag" src="images/srl.png" alt="" /><span class="value">SL</span></a></li>
+                            <li><a href="#">Newziland<img class="flag" src="images/nz.png" alt="" /><span class="value">NZ</span></a></li>
+                            <li><a href="#">Pakistan<img class="flag" src="images/pk.png" alt="" /><span class="value">Pk</span></a></li>
+                            <li><a href="#">United Kingdom<img class="flag" src="images/uk.png" alt="" /><span class="value">UK</span></a></li>
+                            <li><a href="#">United States<img class="flag" src="images/us.png" alt="" /><span class="value">US</span></a></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    </h:body>
+</html>
