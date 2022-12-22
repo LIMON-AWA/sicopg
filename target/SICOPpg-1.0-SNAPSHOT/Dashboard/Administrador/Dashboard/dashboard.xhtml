@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="shortcut icon" href="img/logo/logo.png" type="image/x-icon"></link>
+        
+        <title>Dashboard</title>
+    </h:head>
+
+    <h:body>
+
+
+        <p:menubar style="background: #000">
+
+
+
+
+
+            <f:facet name="options">
+
+
+
+                <div >
+                    <h2 style="color:#FFF;"><b>Bienvenido a SICOP</b></h2> 
+                </div>
+
+
+
+
+                <div class="ui-input-icon-left mr-2">
+                    <i class="pi pi-fw pi-search" />
+                    <p:inputText placeholder="Search"/>
+                </div>
+                <p:button value="Cerrar Sesion" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"/>
+            </f:facet>
+        </p:menubar>
+
+
+
+        <div class="card">
+            <h:form >
+                <p:growl>
+                    <p:autoUpdate/>
+                </p:growl>
+
+                <p:panelMenu style="width:300px;">
+                    <p:submenu label="Usuarios">
+                        <p:menuitem value="Agregar" outcome="/ModuloAdmin/usuario/usuarioAdd.xhtml" ajax="false" icon="pi pi-user-plus"/>
+                        <p:menuitem value="Mostrar" ajax="false" outcome="/ModuloAdmin/usuario/usuarioList.xhtml" icon="pi pi-eye"/>
+
+                    </p:submenu>
+                    <p:submenu label="Inventario">
+                        <p:menuitem value="Agregar" outcome="/ModuloInventario/inventario/inventarioAdd.xhtml" ajax="false" icon="pi pi-plus-circle"/>
+                        <p:menuitem value="Mostrar" outcome="/ModuloInventario/inventario/inventarioList.xhtml" ajax="false" icon="pi pi-eye"/>
+
+
+                    </p:submenu>
+                    <p:submenu label="Ventas">
+                        <p:menuitem value="Agregar" outcome="/ModuloVentas/detalleVenta/detalleVentaAdd.xhtml" ajax="false"  icon="pi pi-plus-circle"/>
+                        <p:menuitem value="Mostrar" outcome="/ModuloVentas/detalleVenta/detalleVentaList.xhtml" ajax="false" icon="pi pi-eye"/>
+
+
+                    </p:submenu>
+                    <p:submenu label="Catalogo">
+                        <p:menuitem value="Agregar" ajax="false" outcome="/ModuloCatalogo/catalogo/catalogoAdd.xhtml"  icon="pi pi-plus-circle"/>
+                        <p:menuitem value="Mostrar" ajax="false" outcome="/ModuloCatalogo/catalogo/catalogoList.xhtml" icon="pi pi-eye"/>
+
+
+                    </p:submenu>
+                    <p:submenu label="Correos">
+                        <p:menuitem value="Enviar correo" ajax="false" outcome="/Correo/email.xhtml" icon="pi pi-envelope"/>
+
+                    </p:submenu>
+                    <p:submenu label="Reportes">
+                        <p:menuitem value="usuario"  ajax="false"  icon="pi pi-user"/>
+                        <p:menuitem value="inventario" ajax="false" icon="pi pi-eye"/>
+
+
+                    </p:submenu>
+                </p:panelMenu>
+            </h:form>
+        </div>
+
+
+
+
+
+        <div class="row" style="justify-content: center; position: absolute; top: 23%; left:25%;  ">
+            <iframe src="principal/index.jsp" width="1000" height="650" frameBorder="0" allowFullScreen=""></iframe>
+        </div>   
+
+
+
+
+
+
+    </h:body>
+
+</html>

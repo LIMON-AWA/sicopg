@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="Dashboard/Vendedor/Dashboard/css/style.css"/>
+
+
+    </h:head>
+
+    <h:body>
+        <a href="principal.html" target="principal"></a>
+
+
+        <div class="container-fluid">
+            <div class="row justify-content-center align-content-center">
+                <div class="col-8 barra">
+                    <h4 class="text-light">SICOP</h4>
+                </div>
+                <div class="col-4 text-right barra">
+                    <ul class="navbar-nav mr-auto">
+                        <li>
+                            <a href="#" class="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle user"></i></a>
+
+                            <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
+                                <a class="dropdown-item menuperfil cerrar" href="#"><i class="fas fa-sign-out-alt m-1"></i>Salir
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="barra-lateral col-12 col-sm-auto">
+                    <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
+                        <!--<li class="navbar-nav"><a href="http://localhost:8080/SICOP_Entrega/faces/ModuloCompra/compra/compraEdit.xhtml">hola ;)</a></li>-->
+                        <a href="../../../ModuloAdmin/usuario/usuarioList.xhtml"><i class="fas fa-home"></i><span>Inicio</span></a>
+                        <span>INGRESAR CLIENTE</span>
+                        <ul class="mm-collapse mm-show" style="">
+                            <li><a href="../../../ModuloAdmin/usuario/usuarioList.xhtml"><i class="fa-solid fa-house-user"></i>Agregar Cliente</a></li>
+
+                         </ul>
+
+                        <span>INVENTARIO</span>
+                        <ul class="mm-collapse mm-show" style="">
+                            <a href="../../../ModuloInventario/inventario/inventarioList.xhtml"><i class="fa-solid fa-bullhorn"></i><span>Productos</span></a>
+                            
+                            <a href="../../../ModuloVentas/detalleVenta/detalleVentaList.xhtml"><i class="fa-solid fa-circle-exclamation"></i><span>Productos Disponibles </span></a>
+                        </ul>
+                        <span>VENTAS</span>
+                        <ul class="mm-collapse mm-show" style="">
+                            <a href="../../../ModuloVentas/catalogo/catalogoList.xhtml"><i class="fa-solid fa-basket-shopping"></i><span>Productos Vendidos</span></a>
+                            <a href="../../../ModuloVentas/detalleVenta/detalleVentaList.xhtml"><i class="fa-solid fa-circle-exclamation"></i><span>Catalogo De Productos </span></a>
+                        </ul>
+                    </nav>
+                </div>
+                <main class="main col">
+                    <div class="row align-content-center text-center">
+                        <div class="columna col-lg-6">
+
+                             
+                        </div>
+                    </div>
+                </main>
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/64eca9cb73.js" crossorigin="anonymous"></script>
+ <div class="row" style="justify-content: center; position: absolute; top: 23%; left:25%;  ">
+            <iframe src="principal/index.jsp" width="1000" height="650" frameBorder="0" allowFullScreen=""></iframe>
+        </div>   
+
+    </h:body>
+
+</html>
